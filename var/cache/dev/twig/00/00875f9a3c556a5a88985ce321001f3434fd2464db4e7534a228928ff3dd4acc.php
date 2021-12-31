@@ -479,6 +479,6 @@ class __TwigTemplate_c599dfa62e357ea657b5b9030cfb45ab6466b56191054005105e54d7f44
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }

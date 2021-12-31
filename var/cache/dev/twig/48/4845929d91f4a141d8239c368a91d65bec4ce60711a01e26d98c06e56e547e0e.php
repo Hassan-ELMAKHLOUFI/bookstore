@@ -413,6 +413,6 @@ class __TwigTemplate_c51d1b2d9c7c7f7e7632cdbdb00d94ac8930dc49856f49bbe4ddd08316a
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

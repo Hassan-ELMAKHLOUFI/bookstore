@@ -6,10 +6,19 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\AuteurController' => $baseDir . '/src/Controller/AuteurController.php',
+    'App\\Controller\\GenreController' => $baseDir . '/src/Controller/GenreController.php',
+    'App\\Controller\\LivreController' => $baseDir . '/src/Controller/LivreController.php',
+    'App\\Controller\\LoginController' => $baseDir . '/src/Controller/LoginController.php',
+    'App\\Controller\\RegistrationController' => $baseDir . '/src/Controller/RegistrationController.php',
     'App\\Entity\\Auteur' => $baseDir . '/src/Entity/Auteur.php',
     'App\\Entity\\Genre' => $baseDir . '/src/Entity/Genre.php',
     'App\\Entity\\Livre' => $baseDir . '/src/Entity/Livre.php',
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
+    'App\\Form\\AuteurType' => $baseDir . '/src/Form/AuteurType.php',
+    'App\\Form\\GenreType' => $baseDir . '/src/Form/GenreType.php',
+    'App\\Form\\LivreType' => $baseDir . '/src/Form/LivreType.php',
+    'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\AuteurRepository' => $baseDir . '/src/Repository/AuteurRepository.php',
     'App\\Repository\\GenreRepository' => $baseDir . '/src/Repository/GenreRepository.php',

@@ -691,6 +691,6 @@ class __TwigTemplate_17243ab4baf31ec7cfd6591a95cebb12c0fa85ad1f0d3d2e49ab59a7da6
 {% block form_group_class -%}
     col-sm-10
 {%- endblock form_group_class %}
-", "bootstrap_5_horizontal_layout.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
+", "bootstrap_5_horizontal_layout.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
     }
 }

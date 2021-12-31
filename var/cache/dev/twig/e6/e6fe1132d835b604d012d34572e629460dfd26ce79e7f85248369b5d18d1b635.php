@@ -227,6 +227,6 @@ class __TwigTemplate_17f1486c877954b7664b70ddf8d8448de520fc316c3bc4c4e7e4d9d1dd1
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }

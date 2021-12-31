@@ -102,6 +102,6 @@ class __TwigTemplate_3f4ef6eba60e7c6b7b5a4708706e21eceeaca1ce98fa03f6e409146785e
     {% if link|default(false) %}</a>{% endif %}
         <div class=\"sf-toolbar-info\">{{ text|default('') }}</div>
 </div>
-", "@WebProfiler/Profiler/toolbar_item.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
+", "@WebProfiler/Profiler/toolbar_item.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
     }
 }

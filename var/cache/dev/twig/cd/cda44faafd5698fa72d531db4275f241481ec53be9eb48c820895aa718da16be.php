@@ -133,6 +133,6 @@ class __TwigTemplate_9f2042b56a83e0c01c23fe29ce7a6a150d02dff5dd630b8d89914b45ac9
 
     <a href=\"{{ path('livre_index') }}\">back to list</a>
 {% endblock %}
-", "livre/new.html.twig", "/Users/softedel/Desktop/bookstore/templates/livre/new.html.twig");
+", "livre/new.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/new.html.twig");
     }
 }

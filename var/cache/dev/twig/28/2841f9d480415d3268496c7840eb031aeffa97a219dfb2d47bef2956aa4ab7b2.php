@@ -557,6 +557,6 @@ class __TwigTemplate_2aefc9ec431d2878ce53a8433265c2b6c6f0dfc58ae00c9b08b50d31826
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Collector/http_client.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
+", "@WebProfiler/Collector/http_client.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
     }
 }

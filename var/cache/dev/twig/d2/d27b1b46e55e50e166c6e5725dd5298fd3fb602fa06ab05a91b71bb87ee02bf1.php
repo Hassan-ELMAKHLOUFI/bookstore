@@ -737,6 +737,6 @@ class __TwigTemplate_68c92d2d684e859c15df8762421a6af06f6716695b4119fc2925727ff3c
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
     }
 }

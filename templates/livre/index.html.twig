@@ -14,7 +14,9 @@
                 <th>Nombre_pages</th>
                 <th>Date_de_parution</th>
                 <th>Note</th>
+                {% if is_granted('ROLE_USER') %}
                 <th>actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -27,8 +29,10 @@
                 <td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
                 <td>{{ livre.note }}</td>
                 <td>
+                    {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('livre_show', {'id': livre.id}) }}">show</a>
                     <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

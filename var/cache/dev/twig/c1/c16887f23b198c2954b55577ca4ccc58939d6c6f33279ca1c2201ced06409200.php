@@ -1671,6 +1671,6 @@ class __TwigTemplate_087064747f22b2fb27dfc9f9dbbe55861a2428d79cd3645a4ec922baab7
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/softedel/Desktop/bookstore/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

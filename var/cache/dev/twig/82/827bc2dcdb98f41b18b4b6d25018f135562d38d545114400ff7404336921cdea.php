@@ -226,6 +226,6 @@ class __TwigTemplate_ab0c96a599cc7fa69bea0f1530c2282454411f446dcba378b75e1cfa883
 
     <a href=\"{{ path('auteur_new') }}\">Create new</a>
 {% endblock %}
-", "auteur/index.html.twig", "/Users/softedel/Desktop/bookstore/templates/auteur/index.html.twig");
+", "auteur/index.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/index.html.twig");
     }
 }

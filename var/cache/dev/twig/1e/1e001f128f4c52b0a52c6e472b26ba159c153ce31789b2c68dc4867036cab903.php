@@ -330,6 +330,6 @@ class __TwigTemplate_e16ce79b0f4667c3b15c12f17fe07c67d50708ca57e9f7571bc63c63032
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
     }
 }

@@ -277,6 +277,6 @@ class __TwigTemplate_93f6080f7b669f92ce39cb54a54445dca2a97c5bceba431a731e7d6181f
     {% set attr = attr|merge({class: (attr.class|default('') ~ ' button')|trim}) %}
     {{- parent() -}}
 {%- endblock button_widget %}
-", "foundation_6_layout.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
+", "foundation_6_layout.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
     }
 }

@@ -1349,6 +1349,6 @@ class __TwigTemplate_78cb181f3c6ae1ecdaf5bf4fca3243b7f803206c3f986cdbba47a5c03c8
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

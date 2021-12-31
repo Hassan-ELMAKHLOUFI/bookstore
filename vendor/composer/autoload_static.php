@@ -592,10 +592,19 @@ class ComposerStaticInit2fb9f9d1c3c12759cb81b95807c3a589
     );
 
     public static $classMap = array (
+        'App\\Controller\\AuteurController' => __DIR__ . '/../..' . '/src/Controller/AuteurController.php',
+        'App\\Controller\\GenreController' => __DIR__ . '/../..' . '/src/Controller/GenreController.php',
+        'App\\Controller\\LivreController' => __DIR__ . '/../..' . '/src/Controller/LivreController.php',
+        'App\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
+        'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Entity\\Auteur' => __DIR__ . '/../..' . '/src/Entity/Auteur.php',
         'App\\Entity\\Genre' => __DIR__ . '/../..' . '/src/Entity/Genre.php',
         'App\\Entity\\Livre' => __DIR__ . '/../..' . '/src/Entity/Livre.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Form\\AuteurType' => __DIR__ . '/../..' . '/src/Form/AuteurType.php',
+        'App\\Form\\GenreType' => __DIR__ . '/../..' . '/src/Form/GenreType.php',
+        'App\\Form\\LivreType' => __DIR__ . '/../..' . '/src/Form/LivreType.php',
+        'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\AuteurRepository' => __DIR__ . '/../..' . '/src/Repository/AuteurRepository.php',
         'App\\Repository\\GenreRepository' => __DIR__ . '/../..' . '/src/Repository/GenreRepository.php',

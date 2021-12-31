@@ -22,7 +22,6 @@ class Auteur
     private $id;
 
     /**
-     * @Assert\Unique
      * @ORM\Column(type="string", length=255)
      */
 

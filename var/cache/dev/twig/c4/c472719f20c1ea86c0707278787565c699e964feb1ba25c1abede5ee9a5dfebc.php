@@ -84,6 +84,6 @@ class __TwigTemplate_1508d82ae2c010beabba875f360a4659e63bf4451a52b6784cee294f757
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "auteur/_form.html.twig", "/Users/softedel/Desktop/bookstore/templates/auteur/_form.html.twig");
+", "auteur/_form.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/_form.html.twig");
     }
 }

@@ -171,6 +171,6 @@ class __TwigTemplate_6779513295549c43c19bf50d68896d77f2bff2e3e4dadaf935fcb088c71
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/softedel/Desktop/bookstore/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

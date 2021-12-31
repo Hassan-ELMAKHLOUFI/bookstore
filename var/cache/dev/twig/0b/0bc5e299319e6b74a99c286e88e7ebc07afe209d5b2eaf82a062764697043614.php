@@ -133,6 +133,6 @@ class __TwigTemplate_dd2decabc921bea8f0a68bc3ae932bd9e210f0a35acacfe4228f08c1719
 
     <a href=\"{{ path('auteur_index') }}\">back to list</a>
 {% endblock %}
-", "auteur/new.html.twig", "/Users/softedel/Desktop/bookstore/templates/auteur/new.html.twig");
+", "auteur/new.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/new.html.twig");
     }
 }

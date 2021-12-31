@@ -174,6 +174,6 @@ class __TwigTemplate_dc496f34146ea818ff784fe63bc4f9b95150dca8444e92adad2f660f583
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

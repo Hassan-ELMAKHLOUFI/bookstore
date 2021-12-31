@@ -122,6 +122,6 @@ class __TwigTemplate_3a23265068a8d40a127f4d65948c2a6c98f4fefd549589aae6eabc6516d
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/table.html.twig", "/Users/softedel/Desktop/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
+", "@WebProfiler/Profiler/table.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
     }
 }
