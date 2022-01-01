@@ -4,7 +4,13 @@
 
 {% block body %}
     <h1>Livre index</h1>
-
+<div>
+    {{
+        render(controller(
+            'App\\Controller\\LivreController::search'
+        ))
+    }}
+</div>
     <table class="table">
         <thead>
             <tr>

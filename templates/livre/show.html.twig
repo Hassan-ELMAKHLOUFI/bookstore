@@ -7,30 +7,81 @@
 
     <table class="table">
         <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ livre.id }}</td>
+        </tr>
+        <tr>
+            <th>Isbn</th>
+            <td>{{ livre.isbn }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ livre.titre }}</td>
+        </tr>
+        <tr>
+            <th>Nombre_pages</th>
+            <td>{{ livre.nombrePages }}</td>
+        </tr>
+        <tr>
+            <th>Date_de_parution</th>
+            <td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ livre.note }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h1>Auteur</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom_prenom</th>
+            <th>Sexe</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for auteur in auteurs %}
             <tr>
-                <th>Id</th>
-                <td>{{ livre.id }}</td>
+                <td>{{ auteur.id }}</td>
+                <td>{{ auteur.nomPrenom }}</td>
+                <td>{{ auteur.sexe }}</td>
+
+
             </tr>
+        {% else %}
             <tr>
-                <th>Isbn</th>
-                <td>{{ livre.isbn }}</td>
+                <td colspan="6">no records found</td>
             </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <h1>Genre index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for genre in genres %}
             <tr>
-                <th>Titre</th>
-                <td>{{ livre.titre }}</td>
+                <td>{{ genre.nom }}</td>
+
             </tr>
+        {% else %}
             <tr>
-                <th>Nombre_pages</th>
-                <td>{{ livre.nombrePages }}</td>
+                <td colspan="3">no records found</td>
             </tr>
-            <tr>
-                <th>Date_de_parution</th>
-                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Note</th>
-                <td>{{ livre.note }}</td>
-            </tr>
+        {% endfor %}
         </tbody>
     </table>
 

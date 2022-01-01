@@ -7,6 +7,9 @@ use App\Form\LivreType;
 use App\Repository\LivreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -55,6 +58,8 @@ class LivreController extends AbstractController
     {
         return $this->render('livre/show.html.twig', [
             'livre' => $livre,
+            'auteurs' =>$livre->getAuteurs(),
+            'genres'=>$livre->getGenres()
         ]);
     }
 
@@ -83,11 +88,30 @@ class LivreController extends AbstractController
      */
     public function delete(Request $request, Livre $livre, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$livre->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $livre->getId(), $request->request->get('_token'))) {
             $entityManager->remove($livre);
             $entityManager->flush();
         }
 
         return $this->redirectToRoute('livre_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    public function search(Request $request, LivreRepository $livreRepository)
+    {
+        $form = $this->createFormBuilder(null)
+            ->setAction($this->generateUrl('handlesearch/handle'))
+            ->add('query',TextType::class)
+            ->add('search',SubmitType::class)->getForm();
+        return $this->render('livre/searchBar.html.twig',['form'=>$form->createView()]);
+    }
+
+    /**
+     * @Route ("/handlesearch/handle", name="handlesearch/handle")
+     */
+    public  function handleSearch (Request  $request,LivreRepository $livreRepository){
+       // dump($request->request); die;
+        return $this->render('livre/index.html.twig', [
+            'livres' => $livreRepository->findByTitre($request->request->get('form')['query']),
+        ]);
     }
 }
