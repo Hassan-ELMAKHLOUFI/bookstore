@@ -69,27 +69,39 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
         // line 19
         echo "    </head>
     <body>
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"background-color: #696969 !important;\">
         <div class=\"container-fluid\">
             <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarTogglerDemo03\" aria-controls=\"navbarTogglerDemo03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+            <a class=\"navbar-brand\" href=\"#\"><img src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/icon.png"), "html", null, true);
+        echo "\" style=\"width: 40px;height: 40px\"  alt=\"Example\"/>
+            </a>
             <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo03\">
                 <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                     <li class=\"nav-item\">
-                        <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>
+                        <a class=\"nav-link active\" aria-current=\"page\" href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_index");
+        echo "\">Livre</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Link</a>
+                        <a class=\"nav-link active\"  href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_index");
+        echo "\">Auteur</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link disabled\">Disabled</a>
+                        <a class=\"nav-link active\" href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_index");
+        echo "\">Genre</a>
                     </li>
                 </ul>
                 <form class=\"d-flex\">
-                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                    <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
+                    <button class=\"btn btn-outline-success\" type=\"submit\">Logout</button>
                 </form>
             </div>
         </div>
@@ -201,9 +213,14 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  182 => 49,  169 => 17,  159 => 16,  146 => 13,  136 => 12,  117 => 5,  104 => 50,  102 => 49,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  53 => 5,  47 => 1,);
+        return array (  194 => 49,  181 => 17,  171 => 16,  158 => 13,  148 => 12,  129 => 5,  116 => 50,  114 => 49,  99 => 37,  93 => 34,  87 => 31,  79 => 26,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -228,27 +245,27 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
         {% endblock %}
     </head>
     <body>
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"background-color: #696969 !important;\">
         <div class=\"container-fluid\">
             <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarTogglerDemo03\" aria-controls=\"navbarTogglerDemo03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+            <a class=\"navbar-brand\" href=\"#\"><img src=\"{{ asset('/icon.png')}}\" style=\"width: 40px;height: 40px\"  alt=\"Example\"/>
+            </a>
             <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo03\">
                 <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                     <li class=\"nav-item\">
-                        <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>
+                        <a class=\"nav-link active\" aria-current=\"page\" href=\"{{ path('livre_index') }}\">Livre</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Link</a>
+                        <a class=\"nav-link active\"  href=\"{{ path('auteur_index') }}\">Auteur</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link disabled\">Disabled</a>
+                        <a class=\"nav-link active\" href=\"{{ path('genre_index') }}\">Genre</a>
                     </li>
                 </ul>
                 <form class=\"d-flex\">
-                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                    <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
+                    <button class=\"btn btn-outline-success\" type=\"submit\">Logout</button>
                 </form>
             </div>
         </div>

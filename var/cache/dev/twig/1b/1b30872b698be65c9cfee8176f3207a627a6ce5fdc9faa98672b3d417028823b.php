@@ -112,7 +112,7 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
              <a href=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_new");
-        echo "\" style=\"margin-left: 70%\"><i class=\"fas fa-plus-square fa-3x\"></i></a>
+        echo "\" style=\"margin-left: 70%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
 
     </div>
 
@@ -120,6 +120,8 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
         // line 25
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
+
+
     <br>
 
     <table class=\"table\">
@@ -133,70 +135,73 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
                 <th>Date de parution</th>
                 <th>Note</th>
                 ";
-        // line 38
+        // line 40
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 39
+            // line 41
             echo "                <th>Actions</th>
                 ";
         }
-        // line 41
+        // line 43
         echo "            </tr>
         </thead>
         <tbody>
         ";
-        // line 44
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 46, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["livre"]) {
-            // line 45
+            // line 47
             echo "            <tr>
                 <td>";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 46), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "isbn", [], "any", false, false, false, 47), "html", null, true);
-            echo "</td>
-                <td>";
             // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 48), "html", null, true);
             echo "</td>
                 <td>";
             // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "nombrePages", [], "any", false, false, false, 49), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "isbn", [], "any", false, false, false, 49), "html", null, true);
             echo "</td>
                 <td>";
             // line 50
-            ((twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 50)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 50), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 50), "html", null, true);
             echo "</td>
                 <td>";
             // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "note", [], "any", false, false, false, 51), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "nombrePages", [], "any", false, false, false, 51), "html", null, true);
             echo "</td>
-                <td>
-                    ";
+                <td>";
+            // line 52
+            ((twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 52)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 52), "d-m-Y"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
             // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "note", [], "any", false, false, false, 53), "html", null, true);
+            echo "</td>
+                ";
+            // line 54
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-                // line 54
-                echo "                    <a style=\"margin-right: 6px\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+                // line 55
+                echo "                <td>
+
+                    <a style=\"margin-right: 6px\" href=\"";
+                // line 57
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 57)]), "html", null, true);
                 echo "\"><i class=\"far fa-eye fa-lg\"></i></a>
                     <a href=\"";
-                // line 55
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 55)]), "html", null, true);
+                // line 58
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 58)]), "html", null, true);
                 echo "\"><i class=\"fas fa-edit fa-lg\"></i></a>
-                    ";
+
+                </td>
+                ";
             }
-            // line 57
-            echo "                </td>
-            </tr>
+            // line 62
+            echo "            </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 60
+            // line 64
             echo "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -205,16 +210,14 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['livre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 68
         echo "        </tbody>
     </table>
 
-<nav aria-label=\"Page navigation example\">
     ";
-        // line 68
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 68, $this->source); })()));
+        // line 71
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 71, $this->source); })()));
         echo "
-</nav>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -236,7 +239,7 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
 
     public function getDebugInfo()
     {
-        return array (  215 => 68,  209 => 64,  200 => 60,  193 => 57,  188 => 55,  183 => 54,  181 => 53,  176 => 51,  172 => 50,  168 => 49,  164 => 48,  160 => 47,  156 => 46,  153 => 45,  148 => 44,  143 => 41,  139 => 39,  137 => 38,  121 => 25,  114 => 21,  108 => 18,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  219 => 71,  214 => 68,  205 => 64,  199 => 62,  192 => 58,  188 => 57,  184 => 55,  182 => 54,  178 => 53,  174 => 52,  170 => 51,  166 => 50,  162 => 49,  158 => 48,  155 => 47,  150 => 46,  145 => 43,  141 => 41,  139 => 40,  121 => 25,  114 => 21,  108 => 18,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -261,11 +264,13 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
             {{ form_row(search.search) }}
         </div>
 
-             <a href=\"{{ path('livre_new') }}\" style=\"margin-left: 70%\"><i class=\"fas fa-plus-square fa-3x\"></i></a>
+             <a href=\"{{ path('livre_new') }}\" style=\"margin-left: 70%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
 
     </div>
 
     {{ form_end(search) }}
+
+
     <br>
 
     <table class=\"table\">
@@ -290,14 +295,16 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
                 <td>{{ livre.isbn }}</td>
                 <td>{{ livre.titre }}</td>
                 <td>{{ livre.nombrePages }}</td>
-                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
+                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('d-m-Y') : '' }}</td>
                 <td>{{ livre.note }}</td>
+                {% if is_granted('ROLE_USER') %}
                 <td>
-                    {% if is_granted('ROLE_USER') %}
+
                     <a style=\"margin-right: 6px\" href=\"{{ path('livre_show', {'id': livre.id}) }}\"><i class=\"far fa-eye fa-lg\"></i></a>
                     <a href=\"{{ path('livre_edit', {'id': livre.id}) }}\"><i class=\"fas fa-edit fa-lg\"></i></a>
-                    {% endif %}
+
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -307,9 +314,7 @@ class __TwigTemplate_02a44c34f899aef8f5f6d43e93b2b3608f209da2264cb0cdcc9a7d74658
         </tbody>
     </table>
 
-<nav aria-label=\"Page navigation example\">
     {{ knp_pagination_render(livres) }}
-</nav>
 {% endblock %}
 ", "livre/index.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/index.html.twig");
     }

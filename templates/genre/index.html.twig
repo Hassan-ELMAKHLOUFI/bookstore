@@ -3,10 +3,14 @@
 {% block title %}Genre index{% endblock %}
 
 {% block body %}
+    <br>
     <h1>Genre index</h1>
-
+<br>
+    <a href="{{ path('genre_new') }}" style="margin-left: 90%"><i class="fas fa-plus-square fa-2x"></i></a>
+    <br>
+    <br>
     <table class="table">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
@@ -30,6 +34,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('genre_new') }}">Create new</a>
+    {{ knp_pagination_render(genres) }}
 {% endblock %}

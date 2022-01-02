@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Livre;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,14 +16,20 @@ class RechercherLivreType extends AbstractType
     {
         $builder
             ->add('titre',TextType::class)
-            ->add('search',SubmitType::class);
+
+            ->add('Du',NumberType::class,[
+                'attr'=>['style'=>'width:200px;']
+            ])
+            ->add('Jusquau',NumberType::class,[
+                'attr'=>['style'=>'width:200px;']
+            ])
+            ->add('search',SubmitType::class)
         ;
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
-            'data_class' => Livre::class,
-        ]);
+
     }
 }

@@ -243,7 +243,7 @@
       <parameter>dev</parameter>
       <parameter>main</parameter>
     </parameter>
-    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
@@ -357,6 +357,13 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\GenreController"/>
       </call>
     </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\HomeController"/>
+      </call>
+    </service>
     <service id="App\Controller\LivreController" class="App\Controller\LivreController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -388,6 +395,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RechercherLivreType" class="App\Form\RechercherLivreType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RechercherParDateLivreType" class="App\Form\RechercherParDateLivreType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
@@ -1052,6 +1062,7 @@
         <argument>App\Form\GenreType</argument>
         <argument>App\Form\LivreType</argument>
         <argument>App\Form\RechercherLivreType</argument>
+        <argument>App\Form\RechercherParDateLivreType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1474,7 +1485,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ybAPCsr"/>
+      <argument type="service" id=".service_locator.Vsk7G6t"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5892,7 +5903,7 @@
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
       <tag name="container.hot_path"/>
       <argument type="collection">
-        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
         <argument key="defaultPageRange">5</argument>
@@ -5913,6 +5924,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LivreController" class="App\Controller\LivreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LivreController" class="App\Controller\LivreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LivreController" class="App\Controller\LivreController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5930,6 +5944,8 @@
     <service id=".abstract.instanceof.App\Form\LivreType" class="App\Form\LivreType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RechercherLivreType" class="App\Form\RechercherLivreType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RechercherLivreType" class="App\Form\RechercherLivreType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RechercherParDateLivreType" class="App\Form\RechercherParDateLivreType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RechercherParDateLivreType" class="App\Form\RechercherParDateLivreType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AuteurRepository" class="App\Repository\AuteurRepository" autowire="true" abstract="true"/>
@@ -6255,10 +6271,11 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.dZK.biq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.FtTl6Vs" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="auteurRepository" type="service_closure" id="App\Repository\AuteurRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.l2QwsaZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6280,10 +6297,11 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.NN15POn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aP0zWrP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="genreRepository" type="service_closure" id="App\Repository\GenreRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.q6BsKYQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6338,19 +6356,20 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.YLraPtD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.g6n4Ci5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuteurController::delete" type="service_closure" id=".service_locator.xHoTv56"/>
         <argument key="App\Controller\AuteurController::edit" type="service_closure" id=".service_locator.xHoTv56"/>
-        <argument key="App\Controller\AuteurController::index" type="service_closure" id=".service_locator.dZK.biq"/>
+        <argument key="App\Controller\AuteurController::index" type="service_closure" id=".service_locator.FtTl6Vs"/>
         <argument key="App\Controller\AuteurController::new" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AuteurController::show" type="service_closure" id=".service_locator.PsDS_hI"/>
         <argument key="App\Controller\GenreController::delete" type="service_closure" id=".service_locator.1S2iSUY"/>
         <argument key="App\Controller\GenreController::edit" type="service_closure" id=".service_locator.1S2iSUY"/>
-        <argument key="App\Controller\GenreController::index" type="service_closure" id=".service_locator.NN15POn"/>
+        <argument key="App\Controller\GenreController::index" type="service_closure" id=".service_locator.aP0zWrP"/>
         <argument key="App\Controller\GenreController::new" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\GenreController::show" type="service_closure" id=".service_locator.q6BsKYQ"/>
+        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.r1pjxyS"/>
         <argument key="App\Controller\LivreController::delete" type="service_closure" id=".service_locator.PjlP4R0"/>
         <argument key="App\Controller\LivreController::edit" type="service_closure" id=".service_locator.PjlP4R0"/>
         <argument key="App\Controller\LivreController::handleSearch" type="service_closure" id=".service_locator.fgyhf2I"/>
@@ -6368,14 +6387,15 @@
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AuteurController:delete" type="service_closure" id=".service_locator.xHoTv56"/>
         <argument key="App\Controller\AuteurController:edit" type="service_closure" id=".service_locator.xHoTv56"/>
-        <argument key="App\Controller\AuteurController:index" type="service_closure" id=".service_locator.dZK.biq"/>
+        <argument key="App\Controller\AuteurController:index" type="service_closure" id=".service_locator.FtTl6Vs"/>
         <argument key="App\Controller\AuteurController:new" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AuteurController:show" type="service_closure" id=".service_locator.PsDS_hI"/>
         <argument key="App\Controller\GenreController:delete" type="service_closure" id=".service_locator.1S2iSUY"/>
         <argument key="App\Controller\GenreController:edit" type="service_closure" id=".service_locator.1S2iSUY"/>
-        <argument key="App\Controller\GenreController:index" type="service_closure" id=".service_locator.NN15POn"/>
+        <argument key="App\Controller\GenreController:index" type="service_closure" id=".service_locator.aP0zWrP"/>
         <argument key="App\Controller\GenreController:new" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\GenreController:show" type="service_closure" id=".service_locator.q6BsKYQ"/>
+        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.r1pjxyS"/>
         <argument key="App\Controller\LivreController:delete" type="service_closure" id=".service_locator.PjlP4R0"/>
         <argument key="App\Controller\LivreController:edit" type="service_closure" id=".service_locator.PjlP4R0"/>
         <argument key="App\Controller\LivreController:handleSearch" type="service_closure" id=".service_locator.fgyhf2I"/>
@@ -6449,13 +6469,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ybAPCsr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Vsk7G6t" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AuteurType" type="service_closure" id="App\Form\AuteurType"/>
         <argument key="App\Form\GenreType" type="service_closure" id="App\Form\GenreType"/>
         <argument key="App\Form\LivreType" type="service_closure" id="App\Form\LivreType"/>
         <argument key="App\Form\RechercherLivreType" type="service_closure" id="App\Form\RechercherLivreType"/>
+        <argument key="App\Form\RechercherParDateLivreType" type="service_closure" id="App\Form\RechercherParDateLivreType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -6737,6 +6758,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
     <service id=".service_locator.GNc8e5B.App\Controller\LivreController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LivreController"/>
       <argument>App\Controller\LivreController</argument>
@@ -6929,12 +6956,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YLraPtD"/>
+      <argument type="service" id=".service_locator.g6n4Ci5"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YLraPtD"/>
+      <argument type="service" id=".service_locator.g6n4Ci5"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7811,7 +7838,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YLraPtD"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.g6n4Ci5"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7834,9 +7861,9 @@
     <service id=".service_locator.H1HixQC" alias=".service_locator.1S2iSUY"/>
     <service id=".service_locator.ZPjW1dj" alias=".service_locator.PjlP4R0"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.dOsAtfV" alias=".service_locator.YLraPtD"/>
+    <service id=".service_locator.9ZHt9mL" alias=".service_locator.g6n4Ci5"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.w75WlLp" alias=".service_locator.ybAPCsr"/>
+    <service id=".service_locator.wgumofk" alias=".service_locator.Vsk7G6t"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.W9y3dzm" alias=".service_locator.GNc8e5B"/>
@@ -7862,11 +7889,11 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
-    <service id=".service_locator.GTpN0.h" alias=".service_locator.dZK.biq"/>
+    <service id=".service_locator._q2EyS0" alias=".service_locator.FtTl6Vs"/>
     <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
     <service id=".service_locator.OciyYc0" alias=".service_locator.PsDS_hI"/>
     <service id=".service_locator.JHCNdkD" alias=".service_locator.xHoTv56"/>
-    <service id=".service_locator.SSbu9KN" alias=".service_locator.NN15POn"/>
+    <service id=".service_locator.BGf2x4G" alias=".service_locator.aP0zWrP"/>
     <service id=".service_locator.vRZdjCG" alias=".service_locator.q6BsKYQ"/>
     <service id=".service_locator.uIFazqv" alias=".service_locator.1S2iSUY"/>
     <service id=".service_locator._2ZAWJV" alias=".service_locator.r1pjxyS"/>

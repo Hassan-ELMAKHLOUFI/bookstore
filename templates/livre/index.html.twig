@@ -18,11 +18,13 @@
             {{ form_row(search.search) }}
         </div>
 
-             <a href="{{ path('livre_new') }}" style="margin-left: 70%"><i class="fas fa-plus-square fa-3x"></i></a>
+             <a href="{{ path('livre_new') }}" style="margin-left: 70%"><i class="fas fa-plus-square fa-2x"></i></a>
 
     </div>
 
     {{ form_end(search) }}
+
+
     <br>
 
     <table class="table">
@@ -47,14 +49,16 @@
                 <td>{{ livre.isbn }}</td>
                 <td>{{ livre.titre }}</td>
                 <td>{{ livre.nombrePages }}</td>
-                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
+                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('d-m-Y') : '' }}</td>
                 <td>{{ livre.note }}</td>
+                {% if is_granted('ROLE_USER') %}
                 <td>
-                    {% if is_granted('ROLE_USER') %}
+
                     <a style="margin-right: 6px" href="{{ path('livre_show', {'id': livre.id}) }}"><i class="far fa-eye fa-lg"></i></a>
                     <a href="{{ path('livre_edit', {'id': livre.id}) }}"><i class="fas fa-edit fa-lg"></i></a>
-                    {% endif %}
+
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -64,7 +68,5 @@
         </tbody>
     </table>
 
-<nav aria-label="Page navigation example">
     {{ knp_pagination_render(livres) }}
-</nav>
 {% endblock %}

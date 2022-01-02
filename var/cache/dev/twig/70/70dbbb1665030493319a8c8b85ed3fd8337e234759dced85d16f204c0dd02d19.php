@@ -89,11 +89,15 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
     <h1>Auteur index</h1>
 
     <br>
-    <br>
-    <br>
 
+    <a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_new");
+        echo "\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+    <br>
+    <br>
     <table class=\"table\">
-        <thead>
+        <thead class=\"table-dark\">
         <tr>
             <th>Id</th>
             <th>Nom_prenom</th>
@@ -105,41 +109,41 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
         </thead>
         <tbody>
         ";
-        // line 25
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 26, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["auteur"]) {
-            // line 26
+            // line 27
             echo "            <tr>
                 <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nomPrenom", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                 <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "sexe", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nomPrenom", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>";
             // line 30
-            ((twig_get_attribute($this->env, $this->source, $context["auteur"], "dateDeNaissance", [], "any", false, false, false, 30)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "dateDeNaissance", [], "any", false, false, false, 30), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "sexe", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
                 <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nationalite", [], "any", false, false, false, 31), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["auteur"], "dateDeNaissance", [], "any", false, false, false, 31)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "dateDeNaissance", [], "any", false, false, false, 31), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nationalite", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_show", ["id" => twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_show", ["id" => twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\"><i class=\"far fa-eye\"></i></a>
                     <a href=\"";
-            // line 34
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 34)]), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             echo "\"><i class=\"fas fa-edit\"></i></a>
                 </td>
             </tr>
@@ -147,7 +151,7 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 38
+            // line 39
             echo "            <tr>
                 <td colspan=\"6\">no records found</td>
             </tr>
@@ -156,15 +160,16 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auteur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 43
         echo "        </tbody>
     </table>
 
-
-    <a href=\"";
+    ";
         // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_new");
-        echo "\">Create new</a>
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 46, $this->source); })()));
+        echo "
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -186,7 +191,7 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
 
     public function getDebugInfo()
     {
-        return array (  166 => 46,  160 => 42,  151 => 38,  142 => 34,  138 => 33,  133 => 31,  129 => 30,  125 => 29,  121 => 28,  117 => 27,  114 => 26,  109 => 25,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 46,  164 => 43,  155 => 39,  146 => 35,  142 => 34,  137 => 32,  133 => 31,  129 => 30,  125 => 29,  121 => 28,  118 => 27,  113 => 26,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -200,11 +205,12 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
     <h1>Auteur index</h1>
 
     <br>
-    <br>
-    <br>
 
+    <a href=\"{{ path('auteur_new') }}\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+    <br>
+    <br>
     <table class=\"table\">
-        <thead>
+        <thead class=\"table-dark\">
         <tr>
             <th>Id</th>
             <th>Nom_prenom</th>
@@ -235,8 +241,9 @@ class __TwigTemplate_85c391392d76cbaf5bfec6cfc8fd39b0239eeeab105bc56f1c955540fe4
         </tbody>
     </table>
 
+    {{ knp_pagination_render(auteurs) }}
 
-    <a href=\"{{ path('auteur_new') }}\">Create new</a>
+
 {% endblock %}
 ", "auteur/index.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/index.html.twig");
     }

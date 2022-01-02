@@ -23,11 +23,21 @@ class LivreRepository extends ServiceEntityRepository
     //  * @return Livre[] Returns an array of Livre objects
     //  */
 
-    public function findByTitre($value)
+    public function findByTitre($value,$Du,$Jusquau)
     {
+        if(empty($Du) ||empty($Jusquau) ){
+            $Du=1900;
+            $Jusquau=2020;
+        }
+        $Du=$Du."-1-1";
+        $Jusquau=$Jusquau."-1-1";
+
         return $this->createQueryBuilder('l')
             ->andWhere('l.titre like :val')
+            ->andWhere('l.date_de_parution BETWEEN :du AND :jusquau')
             ->setParameter('val', "%".$value."%")
+            ->setParameter('du', $Du)
+            ->setParameter('jusquau', $Jusquau)
             ->orderBy('l.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()

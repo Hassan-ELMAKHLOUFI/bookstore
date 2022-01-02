@@ -33,7 +33,7 @@ class LivreController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->render('livre/index.html.twig', [
-                'livres' => $livreRepository->findByTitre($request->request->get('rechercher_livre')['titre']),
+                'livres' => $livreRepository->findByTitre($request->request->get('rechercher_livre')['titre'],),
 
                 'search'=>$form->createView()
             ]);

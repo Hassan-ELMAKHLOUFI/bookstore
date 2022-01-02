@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre index{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+
+    <h1>Livre index</h1>
+    <br>
+
+    {{ form_start(search) }}
+
+    <div style="display: flex !important;">
+
+        {{ form_row(search.titre) }}
+        {{ form_row(search.Du) }}
+        {{ form_row(search.Jusquau) }}
+        <div style="margin-left: 20px">
+            {{ form_row(search.search) }}
+        </div>
+        {{ form_end(search) }}
+    </div>
+
+    <br>
+
+    <table class="table">
+
+        <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Isbn</th>
+            <th>Titre</th>
+            <th>Nombre_pages</th>
+            <th>Date de parution</th>
+            <th>Note</th>
+            {% if is_granted('ROLE_USER') %}
+                <th>Actions</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.id }}</td>
+                <td>{{ livre.isbn }}</td>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.nombrePages }}</td>
+                <td>{{ livre.dateDeParution ? livre.dateDeParution|date('d-m-Y') : '' }}</td>
+                <td>{{ livre.note }}</td>
+                {% if is_granted('ROLE_USER') %}
+                    <td>
+
+                        <a style="margin-right: 6px" href="{{ path('livre_show', {'id': livre.id}) }}"><i class="far fa-eye fa-lg"></i></a>
+                        <a href="{{ path('livre_edit', {'id': livre.id}) }}"><i class="fas fa-edit fa-lg"></i></a>
+
+                    </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(livres) }}
+{% endblock %}

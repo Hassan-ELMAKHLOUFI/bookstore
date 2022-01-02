@@ -6,6 +6,7 @@ use App\Entity\Auteur;
 use App\Form\AuteurType;
 use App\Repository\AuteurRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,10 +20,16 @@ class AuteurController extends AbstractController
     /**
      * @Route("/", name="auteur_index", methods={"GET"})
      */
-    public function index(AuteurRepository $auteurRepository): Response
+    public function index(AuteurRepository $auteurRepository, PaginatorInterface $paginator,Request $request): Response
     {
+$auteurs= $auteurRepository->findAll();
+        $pagination = $paginator->paginate(
+            $auteurs, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            1/*limit per page*/
+        );
         return $this->render('auteur/index.html.twig', [
-            'auteurs' => $auteurRepository->findAll(),
+            'auteurs' => $pagination,
 
         ]);
     }

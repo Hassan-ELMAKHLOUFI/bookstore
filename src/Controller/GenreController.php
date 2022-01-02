@@ -6,6 +6,7 @@ use App\Entity\Genre;
 use App\Form\GenreType;
 use App\Repository\GenreRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,10 +20,16 @@ class GenreController extends AbstractController
     /**
      * @Route("/", name="genre_index", methods={"GET"})
      */
-    public function index(GenreRepository $genreRepository): Response
+    public function index(GenreRepository $genreRepository,Request $request, PaginatorInterface $paginator): Response
     {
+        $genres=$genreRepository->findAll();
+        $pagination = $paginator->paginate(
+            $genres, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            1/*limit per page*/
+        );
         return $this->render('genre/index.html.twig', [
-            'genres' => $genreRepository->findAll(),
+            'genres' => $pagination,
         ]);
     }
 

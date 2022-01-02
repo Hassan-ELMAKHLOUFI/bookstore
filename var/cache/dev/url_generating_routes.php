@@ -24,6 +24,7 @@ return [
     'genre_show' => [['id'], ['_controller' => 'App\\Controller\\GenreController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/genre']], [], [], []],
     'genre_edit' => [['id'], ['_controller' => 'App\\Controller\\GenreController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/genre']], [], [], []],
     'genre_delete' => [['id'], ['_controller' => 'App\\Controller\\GenreController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/genre']], [], [], []],
+    'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'livre_index' => [[], ['_controller' => 'App\\Controller\\LivreController::index'], [], [['text', '/livre/']], [], [], []],
     'livre_new' => [[], ['_controller' => 'App\\Controller\\LivreController::new'], [], [['text', '/livre/new']], [], [], []],
     'livre_show' => [['id'], ['_controller' => 'App\\Controller\\LivreController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/livre']], [], [], []],
