@@ -55,16 +55,18 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" integrity=\"sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+
         ";
-        // line 10
+        // line 12
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 15
         echo "
         ";
-        // line 14
+        // line 16
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 17
+        // line 19
         echo "    </head>
     <body>
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
@@ -92,11 +94,13 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
             </div>
         </div>
     </nav>
+    <br>
+    <br>
     <div class=\"container\">
         ";
-        // line 45
+        // line 49
         $this->displayBlock('body', $context, $blocks);
-        // line 46
+        // line 50
         echo "    </div>
     </body>
 </html>
@@ -128,7 +132,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
 
     }
 
-    // line 10
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -138,7 +142,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 11
+        // line 13
         echo "            ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_link_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -151,7 +155,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
 
     }
 
-    // line 14
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,7 +165,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 15
+        // line 17
         echo "            ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_script_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -174,7 +178,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
 
     }
 
-    // line 45
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -199,7 +203,7 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
 
     public function getDebugInfo()
     {
-        return array (  178 => 45,  165 => 15,  155 => 14,  142 => 11,  132 => 10,  113 => 5,  100 => 46,  98 => 45,  68 => 17,  66 => 14,  63 => 13,  60 => 10,  53 => 5,  47 => 1,);
+        return array (  182 => 49,  169 => 17,  159 => 16,  146 => 13,  136 => 12,  117 => 5,  104 => 50,  102 => 49,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -212,6 +216,8 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" integrity=\"sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -247,6 +253,8 @@ class __TwigTemplate_f182d94cf3c58f56ad2c6943d3b9cf1dd69da18b1c9205ee6672e3945dc
             </div>
         </div>
     </nav>
+    <br>
+    <br>
     <div class=\"container\">
         {% block body %}{% endblock %}
     </div>

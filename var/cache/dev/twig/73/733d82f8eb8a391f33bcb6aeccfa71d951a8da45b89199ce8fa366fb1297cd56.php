@@ -85,22 +85,26 @@ class __TwigTemplate_e7d0ec0933475feef7e2eafafeca96e59b2d1393866a847f6811d8d0404
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Genre</h1>
-
+        echo "    <br>
+    <br>
+    <h1>Edit Genre</h1>
+    <br>
+    <br>
     ";
-        // line 8
+        // line 11
         echo twig_include($this->env, $context, "genre/_form.html.twig", ["button_label" => "Update"]);
         echo "
+<div style=\"width: 200px; display: flex;justify-content:space-between\">
 
     <a href=\"";
-        // line 10
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_index");
-        echo "\">back to list</a>
-
+        echo "\" class=\"btn btn-primary\">back to list</a>
     ";
-        // line 12
+        // line 15
         echo twig_include($this->env, $context, "genre/_delete_form.html.twig");
         echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +126,7 @@ class __TwigTemplate_e7d0ec0933475feef7e2eafafeca96e59b2d1393866a847f6811d8d0404
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 15,  101 => 14,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,13 +136,17 @@ class __TwigTemplate_e7d0ec0933475feef7e2eafafeca96e59b2d1393866a847f6811d8d0404
 {% block title %}Edit Genre{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
     <h1>Edit Genre</h1>
-
+    <br>
+    <br>
     {{ include('genre/_form.html.twig', {'button_label': 'Update'}) }}
+<div style=\"width: 200px; display: flex;justify-content:space-between\">
 
-    <a href=\"{{ path('genre_index') }}\">back to list</a>
-
+    <a href=\"{{ path('genre_index') }}\" class=\"btn btn-primary\">back to list</a>
     {{ include('genre/_delete_form.html.twig') }}
+</div>
 {% endblock %}
 ", "genre/edit.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/genre/edit.html.twig");
     }

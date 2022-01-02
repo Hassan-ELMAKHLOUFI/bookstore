@@ -95,7 +95,7 @@ class __TwigTemplate_9f2042b56a83e0c01c23fe29ce7a6a150d02dff5dd630b8d89914b45ac9
     <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -131,7 +131,7 @@ class __TwigTemplate_9f2042b56a83e0c01c23fe29ce7a6a150d02dff5dd630b8d89914b45ac9
 
     {{ include('livre/_form.html.twig') }}
 
-    <a href=\"{{ path('livre_index') }}\">back to list</a>
+    <a href=\"{{ path('livre_index') }}\" class=\"btn btn-primary\">back to list</a>
 {% endblock %}
 ", "livre/new.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/new.html.twig");
     }

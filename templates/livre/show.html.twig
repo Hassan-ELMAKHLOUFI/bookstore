@@ -31,63 +31,42 @@
             <th>Note</th>
             <td>{{ livre.note }}</td>
         </tr>
+
+        <tr>
+            <th>Auteurs</th>
+            <td>
+                <ul>
+                    {% for auteur in auteurs %}
+
+                    <li>{{ auteur.nomPrenom }}</li>
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>Genres</th>
+            <td>
+                <ul>
+                    {% for genre in genres %}
+
+                        <li>{{ genre.nom }}</li>
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
         </tbody>
     </table>
     <br>
     <br>
-    <h1>Auteur</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nom_prenom</th>
-            <th>Sexe</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        {% for auteur in auteurs %}
-            <tr>
-                <td>{{ auteur.id }}</td>
-                <td>{{ auteur.nomPrenom }}</td>
-                <td>{{ auteur.sexe }}</td>
+<div style="width: 300px; display: flex;justify-content:space-between; margin-left: 200px">
+    <a href="{{ path('livre_index') }}" class="btn btn-primary">back to list</a>
 
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
-    <h1>Genre index</h1>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Nom</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for genre in genres %}
-            <tr>
-                <td>{{ genre.nom }}</td>
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('livre_index') }}">back to list</a>
-
-    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+    <a href="{{ path('livre_edit', {'id': livre.id}) }}"class="btn btn-warning">edit</a>
 
     {{ include('livre/_delete_form.html.twig') }}
+</div>
 {% endblock %}

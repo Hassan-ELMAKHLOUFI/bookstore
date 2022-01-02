@@ -127,18 +127,67 @@ class __TwigTemplate_cf9c2942eb0e58683a41fedb8da4aaa09adbedb38d2575835e8756853e8
         </tbody>
     </table>
 
+
+    <h1>Livre</h1>
+    <table class=\"table\">
+        <thead>
+        <tr>
+            <th>Isbn</th>
+            <th>Titre</th>
+
+        </thead>
+        <tbody>
+        ";
+        // line 43
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 43, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["livre"]) {
+            // line 44
+            echo "            <tr>
+                <td>";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "isbn", [], "any", false, false, false, 45), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 46), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "nombrePages", [], "any", false, false, false, 47), "html", null, true);
+            echo "</td>
+
+            </tr>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 51
+            echo "            <tr>
+                <td colspan=\"7\">no records found</td>
+            </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['livre'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 55
+        echo "        </tbody>
+    </table>
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
     <a href=\"";
-        // line 33
+        // line 58
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
 
     <a href=\"";
-        // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["auteur"]) || array_key_exists("auteur", $context) ? $context["auteur"] : (function () { throw new RuntimeError('Variable "auteur" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
-        echo "\">edit</a>
+        // line 60
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["auteur"]) || array_key_exists("auteur", $context) ? $context["auteur"] : (function () { throw new RuntimeError('Variable "auteur" does not exist.', 60, $this->source); })()), "id", [], "any", false, false, false, 60)]), "html", null, true);
+        echo "\" class=\"btn btn-warning\">edit</a>
 
     ";
-        // line 37
+        // line 62
         echo twig_include($this->env, $context, "auteur/_delete_form.html.twig");
         echo "
 ";
@@ -162,7 +211,7 @@ class __TwigTemplate_cf9c2942eb0e58683a41fedb8da4aaa09adbedb38d2575835e8756853e8
 
     public function getDebugInfo()
     {
-        return array (  142 => 37,  137 => 35,  132 => 33,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  191 => 62,  186 => 60,  181 => 58,  176 => 55,  167 => 51,  158 => 47,  154 => 46,  150 => 45,  147 => 44,  142 => 43,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,9 +248,34 @@ class __TwigTemplate_cf9c2942eb0e58683a41fedb8da4aaa09adbedb38d2575835e8756853e8
         </tbody>
     </table>
 
-    <a href=\"{{ path('auteur_index') }}\">back to list</a>
 
-    <a href=\"{{ path('auteur_edit', {'id': auteur.id}) }}\">edit</a>
+    <h1>Livre</h1>
+    <table class=\"table\">
+        <thead>
+        <tr>
+            <th>Isbn</th>
+            <th>Titre</th>
+
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.isbn }}</td>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.nombrePages }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan=\"7\">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
+    <a href=\"{{ path('auteur_index') }}\" class=\"btn btn-primary\">back to list</a>
+
+    <a href=\"{{ path('auteur_edit', {'id': auteur.id}) }}\" class=\"btn btn-warning\">edit</a>
 
     {{ include('auteur/_delete_form.html.twig') }}
 {% endblock %}

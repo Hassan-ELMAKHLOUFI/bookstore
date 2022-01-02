@@ -105,21 +105,23 @@ class __TwigTemplate_7805d2a6d5dc283cc8d5db51f8264e0b628659ba111a9000f52ca526e3d
             </tr>
         </tbody>
     </table>
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
 
     <a href=\"";
-        // line 21
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
 
     <a href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["genre"]) || array_key_exists("genre", $context) ? $context["genre"] : (function () { throw new RuntimeError('Variable "genre" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
-        echo "\">edit</a>
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["genre"]) || array_key_exists("genre", $context) ? $context["genre"] : (function () { throw new RuntimeError('Variable "genre" does not exist.', 24, $this->source); })()), "id", [], "any", false, false, false, 24)]), "html", null, true);
+        echo "\" class=\"btn btn-warning\">edit</a>
 
     ";
-        // line 25
+        // line 26
         echo twig_include($this->env, $context, "genre/_delete_form.html.twig");
         echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -141,7 +143,7 @@ class __TwigTemplate_7805d2a6d5dc283cc8d5db51f8264e0b628659ba111a9000f52ca526e3d
 
     public function getDebugInfo()
     {
-        return array (  121 => 25,  116 => 23,  111 => 21,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  122 => 26,  117 => 24,  112 => 22,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -165,12 +167,14 @@ class __TwigTemplate_7805d2a6d5dc283cc8d5db51f8264e0b628659ba111a9000f52ca526e3d
             </tr>
         </tbody>
     </table>
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
 
-    <a href=\"{{ path('genre_index') }}\">back to list</a>
+    <a href=\"{{ path('genre_index') }}\" class=\"btn btn-primary\">back to list</a>
 
-    <a href=\"{{ path('genre_edit', {'id': genre.id}) }}\">edit</a>
+    <a href=\"{{ path('genre_edit', {'id': genre.id}) }}\" class=\"btn btn-warning\">edit</a>
 
     {{ include('genre/_delete_form.html.twig') }}
+</div>
 {% endblock %}
 ", "genre/show.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/genre/show.html.twig");
     }

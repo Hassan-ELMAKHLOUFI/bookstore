@@ -85,22 +85,28 @@ class __TwigTemplate_2160a93727756320789f00b030a227e98cf6cbf75a7ef853d70d01a048e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Auteur</h1>
-
-    ";
-        // line 8
-        echo twig_include($this->env, $context, "auteur/_form.html.twig", ["button_label" => "Update"]);
-        echo "
-
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_index");
-        echo "\">back to list</a>
+        echo "    <br>
+    <br>
+    <h1>Edit Auteur</h1>
+    <br>
+    <br>
 
     ";
         // line 12
+        echo twig_include($this->env, $context, "auteur/_form.html.twig", ["button_label" => "Update"]);
+        echo "
+<div style=\"width: 200px; display: flex;justify-content:space-between\">
+
+    <a href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_index");
+        echo "\" class=\"btn btn-primary\">back to list</a>
+
+    ";
+        // line 17
         echo twig_include($this->env, $context, "auteur/_delete_form.html.twig");
         echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +128,7 @@ class __TwigTemplate_2160a93727756320789f00b030a227e98cf6cbf75a7ef853d70d01a048e
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  107 => 17,  102 => 15,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,13 +138,19 @@ class __TwigTemplate_2160a93727756320789f00b030a227e98cf6cbf75a7ef853d70d01a048e
 {% block title %}Edit Auteur{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
     <h1>Edit Auteur</h1>
+    <br>
+    <br>
 
     {{ include('auteur/_form.html.twig', {'button_label': 'Update'}) }}
+<div style=\"width: 200px; display: flex;justify-content:space-between\">
 
-    <a href=\"{{ path('auteur_index') }}\">back to list</a>
+    <a href=\"{{ path('auteur_index') }}\" class=\"btn btn-primary\">back to list</a>
 
     {{ include('auteur/_delete_form.html.twig') }}
+</div>
 {% endblock %}
 ", "auteur/edit.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/edit.html.twig");
     }

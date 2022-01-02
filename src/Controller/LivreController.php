@@ -4,9 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Livre;
 use App\Form\LivreType;
+use App\Form\RechercherLivreType;
 use App\Repository\LivreRepository;
+use Cassandra\Date;
+use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\DateIntervalType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\SubmitButton;
@@ -20,12 +24,31 @@ use Symfony\Component\Routing\Annotation\Route;
 class LivreController extends AbstractController
 {
     /**
-     * @Route("/", name="livre_index", methods={"GET"})
+     * @Route("/", name="livre_index", methods={"GET","POST"})
      */
-    public function index(LivreRepository $livreRepository): Response
+    public function index(Request $request,LivreRepository $livreRepository , PaginatorInterface $paginator): Response
     {
+        $form=$this->createForm(RechercherLivreType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('livre/index.html.twig', [
+                'livres' => $livreRepository->findByTitre($request->request->get('rechercher_livre')['titre']),
+
+                'search'=>$form->createView()
+            ]);
+        }
+        $livres=$livreRepository->findAll();
+        $pagination = $paginator->paginate(
+            $livres, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            1/*limit per page*/
+        );
+
         return $this->render('livre/index.html.twig', [
-            'livres' => $livreRepository->findAll(),
+            'livres' => $pagination,
+            'search'=>$form->createView()
+
         ]);
     }
 
@@ -96,14 +119,27 @@ class LivreController extends AbstractController
         return $this->redirectToRoute('livre_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    public function search(Request $request, LivreRepository $livreRepository)
+//    public function search(Request $request, LivreRepository $livreRepository)
+//    {
+//        $form = $this->createFormBuilder(null)
+//            ->setAction($this->generateUrl('handlesearch/handle'))
+//            ->add('query',TextType::class)
+//            ->add('search',SubmitType::class)->getForm();
+//        return $this->render('livre/searchBar.html.twig',['form'=>$form->createView()]);
+//    }
+
+    public function searchByDate(Request $request, LivreRepository $livreRepository)
     {
         $form = $this->createFormBuilder(null)
-            ->setAction($this->generateUrl('handlesearch/handle'))
-            ->add('query',TextType::class)
+           // ->setAction($this->generateUrl('handlesearch/handle'))
+
+            ->add('end', DateIntervalType::class, [
+                'years' => array_combine(range(1960, 2021), range(1960, 2021)),
+            ])
             ->add('search',SubmitType::class)->getForm();
         return $this->render('livre/searchBar.html.twig',['form'=>$form->createView()]);
     }
+
 
     /**
      * @Route ("/handlesearch/handle", name="handlesearch/handle")

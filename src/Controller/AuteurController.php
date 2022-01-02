@@ -23,6 +23,7 @@ class AuteurController extends AbstractController
     {
         return $this->render('auteur/index.html.twig', [
             'auteurs' => $auteurRepository->findAll(),
+
         ]);
     }
 
@@ -55,6 +56,7 @@ class AuteurController extends AbstractController
     {
         return $this->render('auteur/show.html.twig', [
             'auteur' => $auteur,
+            'livres'=>$auteur->getLivres()
         ]);
     }
 

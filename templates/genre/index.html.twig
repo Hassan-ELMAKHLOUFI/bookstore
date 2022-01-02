@@ -19,8 +19,8 @@
                 <td>{{ genre.id }}</td>
                 <td>{{ genre.nom }}</td>
                 <td>
-                    <a href="{{ path('genre_show', {'id': genre.id}) }}">show</a>
-                    <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
+                    <a href="{{ path('genre_show', {'id': genre.id}) }}"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('genre_edit', {'id': genre.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}

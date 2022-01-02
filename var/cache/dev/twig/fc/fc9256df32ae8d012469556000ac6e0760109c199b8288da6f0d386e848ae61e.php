@@ -46,7 +46,7 @@ class __TwigTemplate_bd645f4fea907c7b812370d915006e5bf541f3e79f29bc181e23ba9a466
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
+    <button class=\"btn btn-primary\" style=\"margin-bottom:20px \">";
         // line 3
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
@@ -82,7 +82,7 @@ class __TwigTemplate_bd645f4fea907c7b812370d915006e5bf541f3e79f29bc181e23ba9a466
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn btn-primary\" style=\"margin-bottom:20px \">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 ", "livre/_form.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/_form.html.twig");
     }

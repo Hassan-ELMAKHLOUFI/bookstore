@@ -85,16 +85,38 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Livre index</h1>
-<div>
+        echo "    <br>
+    <br>
+
+    <h1>Livre index</h1>
+    <br>
+
     ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\LivreController::search"));
         // line 12
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 12, $this->source); })()), 'form_start');
         echo "
-</div>
+
+    <div style=\"display: flex !important;\">
+
+            ";
+        // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 16, $this->source); })()), "titre", [], "any", false, false, false, 16), 'row');
+        echo "
+            ";
+        // line 17
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 17, $this->source); })()), "search", [], "any", false, false, false, 17), 'row');
+        echo "
+    </div>
+
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 20, $this->source); })()), 'form_end');
+        echo "
+    <br>
+
     <table class=\"table\">
-        <thead>
+
+        <thead class=\"table-dark\">
             <tr>
                 <th>Id</th>
                 <th>Isbn</th>
@@ -103,70 +125,70 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
                 <th>Date_de_parution</th>
                 <th>Note</th>
                 ";
-        // line 23
+        // line 33
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 24
+            // line 34
             echo "                <th>actions</th>
                 ";
         }
-        // line 26
+        // line 36
         echo "            </tr>
         </thead>
         <tbody>
         ";
-        // line 29
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 39, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["livre"]) {
-            // line 30
+            // line 40
             echo "            <tr>
                 <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 31), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
                 <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "isbn", [], "any", false, false, false, 32), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "isbn", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
                 <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 33), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 43), "html", null, true);
             echo "</td>
                 <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "nombrePages", [], "any", false, false, false, 34), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "nombrePages", [], "any", false, false, false, 44), "html", null, true);
             echo "</td>
                 <td>";
-            // line 35
-            ((twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 35)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 35), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 45
+            ((twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 45)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "dateDeParution", [], "any", false, false, false, 45), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "note", [], "any", false, false, false, 36), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "note", [], "any", false, false, false, 46), "html", null, true);
             echo "</td>
                 <td>
                     ";
-            // line 38
+            // line 48
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-                // line 39
+                // line 49
                 echo "                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 39)]), "html", null, true);
-                echo "\">show</a>
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+                echo "\"><i class=\"far fa-eye\"></i></a>
                     <a href=\"";
-                // line 40
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 40)]), "html", null, true);
-                echo "\">edit</a>
+                // line 50
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+                echo "\"><i class=\"fas fa-edit\"></i></a>
                     ";
             }
-            // line 42
+            // line 52
             echo "                </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 45
+            // line 55
             echo "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -175,12 +197,12 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['livre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 59
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 52
+        // line 62
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_new");
         echo "\">Create new</a>
 ";
@@ -204,7 +226,7 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
 
     public function getDebugInfo()
     {
-        return array (  184 => 52,  179 => 49,  170 => 45,  163 => 42,  158 => 40,  153 => 39,  151 => 38,  146 => 36,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  123 => 30,  118 => 29,  113 => 26,  109 => 24,  107 => 23,  94 => 12,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  206 => 62,  201 => 59,  192 => 55,  185 => 52,  180 => 50,  175 => 49,  173 => 48,  168 => 46,  164 => 45,  160 => 44,  156 => 43,  152 => 42,  148 => 41,  145 => 40,  140 => 39,  135 => 36,  131 => 34,  129 => 33,  113 => 20,  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -214,16 +236,26 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
 {% block title %}Livre index{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
+
     <h1>Livre index</h1>
-<div>
-    {{
-        render(controller(
-            'App\\\\Controller\\\\LivreController::search'
-        ))
-    }}
-</div>
+    <br>
+
+    {{ form_start(search) }}
+
+    <div style=\"display: flex !important;\">
+
+            {{ form_row(search.titre) }}
+            {{ form_row(search.search) }}
+    </div>
+
+    {{ form_end(search) }}
+    <br>
+
     <table class=\"table\">
-        <thead>
+
+        <thead class=\"table-dark\">
             <tr>
                 <th>Id</th>
                 <th>Isbn</th>
@@ -247,8 +279,8 @@ class __TwigTemplate_331916266dc48a004b69bdcf9cac3cb109c1a41709360800d1ce92f7991
                 <td>{{ livre.note }}</td>
                 <td>
                     {% if is_granted('ROLE_USER') %}
-                    <a href=\"{{ path('livre_show', {'id': livre.id}) }}\">show</a>
-                    <a href=\"{{ path('livre_edit', {'id': livre.id}) }}\">edit</a>
+                    <a href=\"{{ path('livre_show', {'id': livre.id}) }}\"><i class=\"far fa-eye\"></i></a>
+                    <a href=\"{{ path('livre_edit', {'id': livre.id}) }}\"><i class=\"fas fa-edit\"></i></a>
                     {% endif %}
                 </td>
             </tr>

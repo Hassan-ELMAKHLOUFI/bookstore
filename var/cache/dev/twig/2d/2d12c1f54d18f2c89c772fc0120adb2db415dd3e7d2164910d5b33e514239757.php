@@ -131,116 +131,79 @@ class __TwigTemplate_c2f8d3b572b4a5c0cebe639db9bbf3f8a35db76c8e3aa897b1e9c872dfb
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 32, $this->source); })()), "note", [], "any", false, false, false, 32), "html", null, true);
         echo "</td>
         </tr>
-        </tbody>
-    </table>
-    <br>
-    <br>
-    <h1>Auteur</h1>
-    <table class=\"table\">
-        <thead>
+
         <tr>
-            <th>Id</th>
-            <th>Nom_prenom</th>
-            <th>Sexe</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 49
+            <th>Auteurs</th>
+            <td>
+                <ul>
+                    ";
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 49, $this->source); })()));
-        $context['_iterated'] = false;
+        $context['_seq'] = twig_ensure_traversable((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 39, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["auteur"]) {
-            // line 50
-            echo "            <tr>
-                <td>";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "id", [], "any", false, false, false, 51), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nomPrenom", [], "any", false, false, false, 52), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "sexe", [], "any", false, false, false, 53), "html", null, true);
-            echo "</td>
-
-
-            </tr>
-        ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 58
-            echo "            <tr>
-                <td colspan=\"6\">no records found</td>
-            </tr>
-        ";
+            // line 40
+            echo "
+                    <li>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nomPrenom", [], "any", false, false, false, 41), "html", null, true);
+            echo "</li>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auteur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
-        echo "        </tbody>
-    </table>
+        // line 43
+        echo "                </ul>
 
-
-    <h1>Genre index</h1>
-
-    <table class=\"table\">
-        <thead>
-        <tr>
-            <th>Nom</th>
+            </td>
         </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 75
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 75, $this->source); })()));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["genre"]) {
-            // line 76
-            echo "            <tr>
-                <td>";
-            // line 77
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "nom", [], "any", false, false, false, 77), "html", null, true);
-            echo "</td>
 
-            </tr>
-        ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 81
-            echo "            <tr>
-                <td colspan=\"3\">no records found</td>
-            </tr>
-        ";
+        <tr>
+            <th>Genres</th>
+            <td>
+                <ul>
+                    ";
+        // line 52
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 52, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["genre"]) {
+            // line 53
+            echo "
+                        <li>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "nom", [], "any", false, false, false, 54), "html", null, true);
+            echo "</li>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['genre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 85
-        echo "        </tbody>
+        // line 56
+        echo "                </ul>
+
+            </td>
+        </tr>
+        </tbody>
     </table>
+    <br>
+    <br>
 
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
     <a href=\"";
-        // line 88
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
 
     <a href=\"";
-        // line 90
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 90, $this->source); })()), "id", [], "any", false, false, false, 90)]), "html", null, true);
-        echo "\">edit</a>
+        // line 68
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 68, $this->source); })()), "id", [], "any", false, false, false, 68)]), "html", null, true);
+        echo "\"class=\"btn btn-warning\">edit</a>
 
     ";
-        // line 92
+        // line 70
         echo twig_include($this->env, $context, "livre/_delete_form.html.twig");
         echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -262,7 +225,7 @@ class __TwigTemplate_c2f8d3b572b4a5c0cebe639db9bbf3f8a35db76c8e3aa897b1e9c872dfb
 
     public function getDebugInfo()
     {
-        return array (  242 => 92,  237 => 90,  232 => 88,  227 => 85,  218 => 81,  209 => 77,  206 => 76,  201 => 75,  186 => 62,  177 => 58,  167 => 53,  163 => 52,  159 => 51,  156 => 50,  151 => 49,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  204 => 70,  199 => 68,  194 => 66,  182 => 56,  174 => 54,  171 => 53,  167 => 52,  156 => 43,  148 => 41,  145 => 40,  141 => 39,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -300,65 +263,44 @@ class __TwigTemplate_c2f8d3b572b4a5c0cebe639db9bbf3f8a35db76c8e3aa897b1e9c872dfb
             <th>Note</th>
             <td>{{ livre.note }}</td>
         </tr>
+
+        <tr>
+            <th>Auteurs</th>
+            <td>
+                <ul>
+                    {% for auteur in auteurs %}
+
+                    <li>{{ auteur.nomPrenom }}</li>
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
+
+        <tr>
+            <th>Genres</th>
+            <td>
+                <ul>
+                    {% for genre in genres %}
+
+                        <li>{{ genre.nom }}</li>
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
         </tbody>
     </table>
     <br>
     <br>
-    <h1>Auteur</h1>
-    <table class=\"table\">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nom_prenom</th>
-            <th>Sexe</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        {% for auteur in auteurs %}
-            <tr>
-                <td>{{ auteur.id }}</td>
-                <td>{{ auteur.nomPrenom }}</td>
-                <td>{{ auteur.sexe }}</td>
+<div style=\"width: 300px; display: flex;justify-content:space-between; margin-left: 200px\">
+    <a href=\"{{ path('livre_index') }}\" class=\"btn btn-primary\">back to list</a>
 
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"6\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
-    <h1>Genre index</h1>
-
-    <table class=\"table\">
-        <thead>
-        <tr>
-            <th>Nom</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for genre in genres %}
-            <tr>
-                <td>{{ genre.nom }}</td>
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"3\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href=\"{{ path('livre_index') }}\">back to list</a>
-
-    <a href=\"{{ path('livre_edit', {'id': livre.id}) }}\">edit</a>
+    <a href=\"{{ path('livre_edit', {'id': livre.id}) }}\"class=\"btn btn-warning\">edit</a>
 
     {{ include('livre/_delete_form.html.twig') }}
+</div>
 {% endblock %}
 ", "livre/show.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/show.html.twig");
     }

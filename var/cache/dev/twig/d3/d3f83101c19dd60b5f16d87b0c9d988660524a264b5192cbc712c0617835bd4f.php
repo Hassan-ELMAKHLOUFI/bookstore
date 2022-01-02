@@ -116,11 +116,11 @@ class __TwigTemplate_018754c2beb0ce9d6b5cf5170d9996ceca98fe2b727bf0d30407f15ea00
                     <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 22)]), "html", null, true);
-            echo "\">show</a>
+            echo "\"><i class=\"far fa-eye\"></i></a>
                     <a href=\"";
             // line 23
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 23)]), "html", null, true);
-            echo "\">edit</a>
+            echo "\"><i class=\"fas fa-edit\"></i></a>
                 </td>
             </tr>
         ";
@@ -191,8 +191,8 @@ class __TwigTemplate_018754c2beb0ce9d6b5cf5170d9996ceca98fe2b727bf0d30407f15ea00
                 <td>{{ genre.id }}</td>
                 <td>{{ genre.nom }}</td>
                 <td>
-                    <a href=\"{{ path('genre_show', {'id': genre.id}) }}\">show</a>
-                    <a href=\"{{ path('genre_edit', {'id': genre.id}) }}\">edit</a>
+                    <a href=\"{{ path('genre_show', {'id': genre.id}) }}\"><i class=\"far fa-eye\"></i></a>
+                    <a href=\"{{ path('genre_edit', {'id': genre.id}) }}\"><i class=\"fas fa-edit\"></i></a>
                 </td>
             </tr>
         {% else %}

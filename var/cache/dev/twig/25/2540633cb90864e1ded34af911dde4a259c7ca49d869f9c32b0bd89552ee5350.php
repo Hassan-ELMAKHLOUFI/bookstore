@@ -32,7 +32,7 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
 
     protected function doGetParent(array $context)
     {
-        // line 1
+        // line 2
         return "base.html.twig";
     }
 
@@ -45,7 +45,7 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "livre/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "livre/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "livre/edit.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -55,7 +55,7 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +74,7 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,23 +84,28 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Edit Livre</h1>
-
+        // line 7
+        echo "    <br>
+    <br>
+    <h1>Edit Livre</h1>
+    <br>
+    <br>
     ";
-        // line 8
+        // line 12
         echo twig_include($this->env, $context, "livre/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
+<div style=\"width: 300px; display: flex;justify-content:space-between\">
     <a href=\"";
-        // line 10
+        // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("livre_index");
-        echo "\">back to list</a>
+        echo " \" class=\"btn btn-primary\">back to list</a>
 
     ";
-        // line 12
+        // line 17
         echo twig_include($this->env, $context, "livre/_delete_form.html.twig");
         echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,23 +127,29 @@ class __TwigTemplate_ac1e31f75ce46092e8c74224e8eb6493a2615eee4933a0c2bc270e27f23
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 17,  101 => 15,  95 => 12,  88 => 7,  78 => 6,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
+{% extends 'base.html.twig' %}
 
 {% block title %}Edit Livre{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
     <h1>Edit Livre</h1>
-
+    <br>
+    <br>
     {{ include('livre/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href=\"{{ path('livre_index') }}\">back to list</a>
+<div style=\"width: 300px; display: flex;justify-content:space-between\">
+    <a href=\"{{ path('livre_index') }} \" class=\"btn btn-primary\">back to list</a>
 
     {{ include('livre/_delete_form.html.twig') }}
+</div>
 {% endblock %}
 ", "livre/edit.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/livre/edit.html.twig");
     }

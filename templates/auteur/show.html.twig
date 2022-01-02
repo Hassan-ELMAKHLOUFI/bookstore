@@ -30,9 +30,34 @@
         </tbody>
     </table>
 
-    <a href="{{ path('auteur_index') }}">back to list</a>
 
-    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
+    <h1>Livre</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Isbn</th>
+            <th>Titre</th>
+
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.isbn }}</td>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.nombrePages }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div style="width: 300px; display: flex;justify-content:space-between; margin-left: 200px">
+    <a href="{{ path('auteur_index') }}" class="btn btn-primary">back to list</a>
+
+    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}" class="btn btn-warning">edit</a>
 
     {{ include('auteur/_delete_form.html.twig') }}
 {% endblock %}

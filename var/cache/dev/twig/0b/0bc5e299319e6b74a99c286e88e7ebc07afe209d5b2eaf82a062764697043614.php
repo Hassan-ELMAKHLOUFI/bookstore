@@ -95,7 +95,7 @@ class __TwigTemplate_dd2decabc921bea8f0a68bc3ae932bd9e210f0a35acacfe4228f08c1719
     <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteur_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -131,7 +131,7 @@ class __TwigTemplate_dd2decabc921bea8f0a68bc3ae932bd9e210f0a35acacfe4228f08c1719
 
     {{ include('auteur/_form.html.twig') }}
 
-    <a href=\"{{ path('auteur_index') }}\">back to list</a>
+    <a href=\"{{ path('auteur_index') }}\" class=\"btn btn-primary\">back to list</a>
 {% endblock %}
 ", "auteur/new.html.twig", "/Users/softedel/Documents/GitHub/bookstore/templates/auteur/new.html.twig");
     }
