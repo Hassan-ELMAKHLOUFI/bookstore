@@ -6,7 +6,11 @@
     <br>
     <h1>Genre index</h1>
 <br>
-    <a href="{{ path('genre_new') }}" style="margin-left: 90%"><i class="fas fa-plus-square fa-2x"></i></a>
+    {% if is_granted('ROLE_USER') %}
+
+        <a href="{{ path('genre_new') }}" style="margin-left: 90%"><i class="fas fa-plus-square fa-2x"></i></a>
+    {% endif%}
+
     <br>
     <br>
     <table class="table">
@@ -14,7 +18,11 @@
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
+                {% if is_granted('ROLE_USER') %}
+
                 <th>actions</th>
+                {% endif%}
+
             </tr>
         </thead>
         <tbody>
@@ -22,10 +30,14 @@
             <tr>
                 <td>{{ genre.id }}</td>
                 <td>{{ genre.nom }}</td>
+                {% if is_granted('ROLE_USER') %}
+
                 <td>
                     <a href="{{ path('genre_show', {'id': genre.id}) }}"><i class="far fa-eye"></i></a>
                     <a href="{{ path('genre_edit', {'id': genre.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
+                {% endif%}
+
             </tr>
         {% else %}
             <tr>

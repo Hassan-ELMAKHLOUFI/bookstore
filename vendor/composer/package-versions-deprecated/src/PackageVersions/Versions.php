@@ -52,6 +52,7 @@ final class Versions
   'doctrine/sql-formatter' => '1.1.2@20c39c2de286a9d3262cc8ed282a4ae60e265894',
   'egulias/email-validator' => '3.1.2@ee0db30118f661fb166bcffbf5d82032df484697',
   'friendsofphp/proxy-manager-lts' => 'v1.0.5@006aa5d32f887a4db4353b13b5b5095613e0611f',
+  'fzaninotto/faker' => 'v1.9.2@848d8125239d7dbf8ab25cb7f054f1a630e68c2e',
   'knplabs/knp-components' => 'v3.5.0@755b0d10902a7db5dc654e9af86a7dcb9c7c5b7d',
   'knplabs/knp-paginator-bundle' => 'v5.8.0@216b9d5708001788321916c5b7632da9fb9ef6ca',
   'laminas/laminas-code' => '4.5.1@6fd96d4d913571a2cd056a27b123fa28cb90ac4e',
@@ -131,6 +132,8 @@ final class Versions
   'twig/extra-bundle' => 'v3.3.4@1fe52d84aa22b7891c7717ef904b1551c8d70100',
   'twig/twig' => 'v3.3.4@65cb6f0b956485e1664f13d023c55298a4bb59ca',
   'webmozart/assert' => '1.10.0@6964c76c7804814a842473e0c8fd15bab0f18e25',
+  'doctrine/data-fixtures' => '1.5.1@f18adf13f6c81c67a88360dca359ad474523f8e3',
+  'doctrine/doctrine-fixtures-bundle' => '3.4.1@31ba202bebce0b66fe830f49f96228dcdc1503e7',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'nikic/php-parser' => 'v4.13.2@210577fe3cf7badcc5814d99455df46564f3c077',
   'phar-io/manifest' => '2.0.3@97803eca37d319dfa7826cc2437fc020857acb53',
@@ -166,10 +169,10 @@ final class Versions
   'symfony/phpunit-bridge' => 'v6.0.0@5d6cc6720085084f504d2482fc4a2f268784006b',
   'symfony/web-profiler-bundle' => 'v5.4.0@85261499e255007ac76afe1a943b0c7c0f925c45',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'symfony/polyfill-ctype' => '*@69088de3f12c47cceae9d0fc792d51b895a679ef',
-  'symfony/polyfill-iconv' => '*@69088de3f12c47cceae9d0fc792d51b895a679ef',
-  'symfony/polyfill-php72' => '*@69088de3f12c47cceae9d0fc792d51b895a679ef',
-  '__root__' => 'dev-main@69088de3f12c47cceae9d0fc792d51b895a679ef',
+  'symfony/polyfill-ctype' => '*@df96542d060a72c573899e8d7c0000699fb83503',
+  'symfony/polyfill-iconv' => '*@df96542d060a72c573899e8d7c0000699fb83503',
+  'symfony/polyfill-php72' => '*@df96542d060a72c573899e8d7c0000699fb83503',
+  '__root__' => 'dev-main@df96542d060a72c573899e8d7c0000699fb83503',
 );
 
     private function __construct()

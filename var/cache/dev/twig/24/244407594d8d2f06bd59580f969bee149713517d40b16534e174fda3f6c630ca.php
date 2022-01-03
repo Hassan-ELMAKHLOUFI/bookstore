@@ -88,10 +88,19 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
         echo "    <br>
     <h1>Genre index</h1>
 <br>
-    <a href=\"";
+    ";
         // line 9
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_new");
-        echo "\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 10
+            echo "
+        <a href=\"";
+            // line 11
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_new");
+            echo "\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+    ";
+        }
+        // line 13
+        echo "
     <br>
     <br>
     <table class=\"table\">
@@ -99,42 +108,60 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
+                ";
+        // line 21
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 22
+            echo "
                 <th>actions</th>
+                ";
+        }
+        // line 25
+        echo "
             </tr>
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 29, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["genre"]) {
-            // line 22
+            // line 30
             echo "            <tr>
                 <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 23), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "nom", [], "any", false, false, false, 24), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["genre"], "nom", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
+                ";
+            // line 33
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+                // line 34
+                echo "
                 <td>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\"><i class=\"far fa-eye\"></i></a>
+                // line 36
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_show", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                echo "\"><i class=\"far fa-eye\"></i></a>
                     <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\"><i class=\"fas fa-edit\"></i></a>
+                // line 37
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("genre_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["genre"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+                echo "\"><i class=\"fas fa-edit\"></i></a>
                 </td>
+                ";
+            }
+            // line 40
+            echo "
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 43
             echo "            <tr>
                 <td colspan=\"3\">no records found</td>
             </tr>
@@ -143,12 +170,12 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['genre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 47
         echo "        </tbody>
     </table>
     ";
-        // line 37
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 37, $this->source); })()));
+        // line 49
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["genres"]) || array_key_exists("genres", $context) ? $context["genres"] : (function () { throw new RuntimeError('Variable "genres" does not exist.', 49, $this->source); })()));
         echo "
 ";
         
@@ -171,7 +198,7 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
 
     public function getDebugInfo()
     {
-        return array (  151 => 37,  147 => 35,  138 => 31,  129 => 27,  125 => 26,  120 => 24,  116 => 23,  113 => 22,  108 => 21,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  178 => 49,  174 => 47,  165 => 43,  158 => 40,  152 => 37,  148 => 36,  144 => 34,  142 => 33,  138 => 32,  134 => 31,  131 => 30,  126 => 29,  120 => 25,  115 => 22,  113 => 21,  103 => 13,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,7 +211,11 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
     <br>
     <h1>Genre index</h1>
 <br>
-    <a href=\"{{ path('genre_new') }}\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+    {% if is_granted('ROLE_USER') %}
+
+        <a href=\"{{ path('genre_new') }}\" style=\"margin-left: 90%\"><i class=\"fas fa-plus-square fa-2x\"></i></a>
+    {% endif%}
+
     <br>
     <br>
     <table class=\"table\">
@@ -192,7 +223,11 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
+                {% if is_granted('ROLE_USER') %}
+
                 <th>actions</th>
+                {% endif%}
+
             </tr>
         </thead>
         <tbody>
@@ -200,10 +235,14 @@ class __TwigTemplate_9035235c8d403de7f65c0cf45159c8298aeda6e8180810d3414e640630c
             <tr>
                 <td>{{ genre.id }}</td>
                 <td>{{ genre.nom }}</td>
+                {% if is_granted('ROLE_USER') %}
+
                 <td>
                     <a href=\"{{ path('genre_show', {'id': genre.id}) }}\"><i class=\"far fa-eye\"></i></a>
                     <a href=\"{{ path('genre_edit', {'id': genre.id}) }}\"><i class=\"fas fa-edit\"></i></a>
                 </td>
+                {% endif%}
+
             </tr>
         {% else %}
             <tr>

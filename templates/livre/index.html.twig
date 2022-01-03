@@ -4,27 +4,33 @@
 
 {% block body %}
     <br>
-    <br>
 
     <h1>Livre index</h1>
-    <br>
-
-    {{ form_start(search) }}
-
     <div style="display: flex !important;">
 
-            {{ form_row(search.titre) }}
+        {{ form_row(search.titre) }}
+        <div style="margin-left: 5px">
+            {{ form_row(search.Du) }}
+        </div>
+        <div style="margin-left: 5px">
+
+        {{ form_row(search.Jusquau) }}
+        </div>
         <div style="margin-left: 20px">
             {{ form_row(search.search) }}
         </div>
-
-             <a href="{{ path('livre_new') }}" style="margin-left: 70%"><i class="fas fa-plus-square fa-2x"></i></a>
-
+        {{ form_end(search) }}
     </div>
 
-    {{ form_end(search) }}
 
+    {{ form_start(search) }}
 
+    <br>
+    {% if is_granted('ROLE_USER') %}
+
+        <a href="{{ path('livre_new') }}" style="margin-left: 90%"><i class="fas fa-plus-square fa-2x"></i></a>
+    {% endif%}
+<br>
     <br>
 
     <table class="table">

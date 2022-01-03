@@ -38,7 +38,13 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <button class="btn btn-outline-success" type="submit">Logout</button>
+                    {% if is_granted('ROLE_USER') %}
+                        <a class="btn btn-outline-success" href="{{ path('app_logout') }}">Logout</a>
+
+                    {% else %}
+                        <a class="btn btn-outline-success" href="{{ path('app_login') }}">Login</a>
+
+                    {% endif %}
                 </form>
             </div>
         </div>

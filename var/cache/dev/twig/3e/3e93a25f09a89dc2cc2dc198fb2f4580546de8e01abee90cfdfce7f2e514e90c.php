@@ -40,9 +40,11 @@ class __TwigTemplate_0a2f4ef0f0d309ff9c172dd5f21ca3cf6e7e3cf639cbef878b956588922
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@KnpPaginator/Pagination/sortable_link.html.twig"));
 
         // line 1
-        echo "<a";
+        echo "
+<a ";
+        // line 2
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["options"]) || array_key_exists("options", $context) ? $context["options"] : (function () { throw new RuntimeError('Variable "options" does not exist.', 1, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["options"]) || array_key_exists("options", $context) ? $context["options"] : (function () { throw new RuntimeError('Variable "options" does not exist.', 2, $this->source); })()));
         foreach ($context['_seq'] as $context["attr"] => $context["value"]) {
             echo " ";
             echo twig_escape_filter($this->env, $context["attr"], "html", null, true);
@@ -54,7 +56,7 @@ class __TwigTemplate_0a2f4ef0f0d309ff9c172dd5f21ca3cf6e7e3cf639cbef878b956588922
         unset($context['_seq'], $context['_iterated'], $context['attr'], $context['value'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         echo ">";
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 1, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 2, $this->source); })()), "html", null, true);
         echo "</a>
 ";
         
@@ -77,12 +79,13 @@ class __TwigTemplate_0a2f4ef0f0d309ff9c172dd5f21ca3cf6e7e3cf639cbef878b956588922
 
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<a{% for attr, value in options %} {{ attr }}=\"{{ value }}\"{% endfor %}>{{ title }}</a>
+        return new Source("
+<a {% for attr, value in options %} {{ attr }}=\"{{ value }}\"{% endfor %}>{{ title }}</a>
 ", "@KnpPaginator/Pagination/sortable_link.html.twig", "/Users/softedel/Documents/GitHub/bookstore/vendor/knplabs/knp-paginator-bundle/templates/Pagination/sortable_link.html.twig");
     }
 }

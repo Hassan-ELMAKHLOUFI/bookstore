@@ -113,14 +113,14 @@ class __TwigTemplate_d5df42a349baf6770b33ef0e0b00fa626fcaf17a19010d2f1bd050743f5
         }
         // line 16
         echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"";
+    <h1 class=\"h3 mb-3 font-weight-normal\">Authentification</h1>
+    <label for=\"inputEmail\" style=\"margin-top: 50px\" >Email</label>
+    <input type=\"email\" style=\"margin-top: 7px\"  value=\"";
         // line 19
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 19, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+    <label for=\"inputPassword\"  style=\"margin-top: 30px\" >Password</label>
+    <input type=\"password\" style=\"margin-top: 7px\"  name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
@@ -132,7 +132,7 @@ class __TwigTemplate_d5df42a349baf6770b33ef0e0b00fa626fcaf17a19010d2f1bd050743f5
     ";
         // line 37
         echo "
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+    <button class=\"btn btn-lg btn-primary\" style=\"margin-top: 50px\"  type=\"submit\">
         Sign in
     </button>
 </form>
@@ -178,11 +178,11 @@ class __TwigTemplate_d5df42a349baf6770b33ef0e0b00fa626fcaf17a19010d2f1bd050743f5
         </div>
     {% endif %}
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+    <h1 class=\"h3 mb-3 font-weight-normal\">Authentification</h1>
+    <label for=\"inputEmail\" style=\"margin-top: 50px\" >Email</label>
+    <input type=\"email\" style=\"margin-top: 7px\"  value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
+    <label for=\"inputPassword\"  style=\"margin-top: 30px\" >Password</label>
+    <input type=\"password\" style=\"margin-top: 7px\"  name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"{{ csrf_token('authenticate') }}\"
@@ -199,7 +199,7 @@ class __TwigTemplate_d5df42a349baf6770b33ef0e0b00fa626fcaf17a19010d2f1bd050743f5
         </div>
     #}
 
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+    <button class=\"btn btn-lg btn-primary\" style=\"margin-top: 50px\"  type=\"submit\">
         Sign in
     </button>
 </form>

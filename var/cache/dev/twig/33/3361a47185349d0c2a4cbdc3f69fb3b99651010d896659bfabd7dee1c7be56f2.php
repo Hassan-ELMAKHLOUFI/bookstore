@@ -101,8 +101,25 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
                     </li>
                 </ul>
                 <form class=\"d-flex\">
-                    <button class=\"btn btn-outline-success\" type=\"submit\">Logout</button>
-                </form>
+                    ";
+        // line 41
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 42
+            echo "                        <a class=\"btn btn-outline-success\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Logout</a>
+
+                    ";
+        } else {
+            // line 45
+            echo "                        <a class=\"btn btn-outline-success\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Login</a>
+
+                    ";
+        }
+        // line 48
+        echo "                </form>
             </div>
         </div>
     </nav>
@@ -110,9 +127,9 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
     <br>
     <div class=\"container\">
         ";
-        // line 49
+        // line 55
         $this->displayBlock('body', $context, $blocks);
-        // line 50
+        // line 56
         echo "    </div>
     </body>
 </html>
@@ -190,7 +207,7 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
 
     }
 
-    // line 49
+    // line 55
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,7 +237,7 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
 
     public function getDebugInfo()
     {
-        return array (  194 => 49,  181 => 17,  171 => 16,  158 => 13,  148 => 12,  129 => 5,  116 => 50,  114 => 49,  99 => 37,  93 => 34,  87 => 31,  79 => 26,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  53 => 5,  47 => 1,);
+        return array (  211 => 55,  198 => 17,  188 => 16,  175 => 13,  165 => 12,  146 => 5,  133 => 56,  131 => 55,  122 => 48,  115 => 45,  108 => 42,  106 => 41,  99 => 37,  93 => 34,  87 => 31,  79 => 26,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -265,7 +282,13 @@ class __TwigTemplate_611e4ba26d227f9b6685bcba479d9bc6da687ff7de41f2c4c10ba53e02c
                     </li>
                 </ul>
                 <form class=\"d-flex\">
-                    <button class=\"btn btn-outline-success\" type=\"submit\">Logout</button>
+                    {% if is_granted('ROLE_USER') %}
+                        <a class=\"btn btn-outline-success\" href=\"{{ path('app_logout') }}\">Logout</a>
+
+                    {% else %}
+                        <a class=\"btn btn-outline-success\" href=\"{{ path('app_login') }}\">Login</a>
+
+                    {% endif %}
                 </form>
             </div>
         </div>

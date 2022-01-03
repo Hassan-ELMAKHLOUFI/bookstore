@@ -26,7 +26,7 @@ class GenreController extends AbstractController
         $pagination = $paginator->paginate(
             $genres, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            1/*limit per page*/
+            6/*limit per page*/
         );
         return $this->render('genre/index.html.twig', [
             'genres' => $pagination,

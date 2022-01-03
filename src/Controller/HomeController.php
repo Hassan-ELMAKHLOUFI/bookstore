@@ -28,7 +28,7 @@ class HomeController extends AbstractController
             $pagination = $paginator->paginate(
                 $livres, /* query NOT result */
                 $request->query->getInt('page', 1)/*page number*/,
-                2/*limit per page*/
+                6/*limit per page*/
             );
 
             return $this->render('home/index.html.twig', [
@@ -41,7 +41,7 @@ class HomeController extends AbstractController
         $pagination = $paginator->paginate(
             $livres, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            2/*limit per page*/
+            6/*limit per page*/
         );
 
         return $this->render('home/index.html.twig', [

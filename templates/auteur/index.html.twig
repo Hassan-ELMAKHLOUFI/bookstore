@@ -7,8 +7,11 @@
     <h1>Auteur index</h1>
 
     <br>
+    {% if is_granted('ROLE_USER') %}
 
     <a href="{{ path('auteur_new') }}" style="margin-left: 90%"><i class="fas fa-plus-square fa-2x"></i></a>
+    {% endif%}
+
     <br>
     <br>
     <table class="table">
@@ -19,7 +22,11 @@
             <th>Sexe</th>
             <th>Date_de_naissance</th>
             <th>Nationalite</th>
+            {% if is_granted('ROLE_USER') %}
+
             <th>actions</th>
+            {% endif %}
+
         </tr>
         </thead>
         <tbody>
@@ -30,10 +37,15 @@
                 <td>{{ auteur.sexe }}</td>
                 <td>{{ auteur.dateDeNaissance ? auteur.dateDeNaissance|date('Y-m-d') : '' }}</td>
                 <td>{{ auteur.nationalite }}</td>
+                {% if is_granted('ROLE_USER') %}
+
                 <td>
+
                     <a href="{{ path('auteur_show', {'id': auteur.id}) }}"><i class="far fa-eye"></i></a>
                     <a href="{{ path('auteur_edit', {'id': auteur.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
+                {% endif%}
+
             </tr>
         {% else %}
             <tr>

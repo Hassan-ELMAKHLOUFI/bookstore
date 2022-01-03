@@ -26,28 +26,37 @@ class LivreController extends AbstractController
     /**
      * @Route("/", name="livre_index", methods={"GET","POST"})
      */
-    public function index(Request $request,LivreRepository $livreRepository , PaginatorInterface $paginator): Response
+    public function index(LivreRepository $livreRepository,Request $request, PaginatorInterface $paginator): Response
     {
         $form=$this->createForm(RechercherLivreType::class);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('livre/index.html.twig', [
-                'livres' => $livreRepository->findByTitre($request->request->get('rechercher_livre')['titre'],),
+            $livres=$livreRepository->findByTitre($request->request->get('rechercher_livre')['titre'],$request->request->get('rechercher_livre')['Du'],$request->request->get('rechercher_livre')['Jusquau']);
+            $pagination = $paginator->paginate(
+                $livres, /* query NOT result */
+                $request->query->getInt('page', 1)/*page number*/,
+                6/*limit per page*/
+            );
 
-                'search'=>$form->createView()
+            return $this->render('livre/index.html.twig', [
+                'livres' => $pagination,
+
+                'search'=>$form->createView(),
             ]);
         }
         $livres=$livreRepository->findAll();
         $pagination = $paginator->paginate(
             $livres, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            1/*limit per page*/
+            6/*limit per page*/
         );
 
         return $this->render('livre/index.html.twig', [
             'livres' => $pagination,
-            'search'=>$form->createView()
+
+            'search'=>$form->createView(),
 
         ]);
     }

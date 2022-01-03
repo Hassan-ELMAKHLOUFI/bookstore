@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '69088de3f12c47cceae9d0fc792d51b895a679ef',
+    'reference' => 'df96542d060a72c573899e8d7c0000699fb83503',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '69088de3f12c47cceae9d0fc792d51b895a679ef',
+      'reference' => 'df96542d060a72c573899e8d7c0000699fb83503',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -78,6 +78,15 @@ private static $installed = array (
       ),
       'reference' => '6d970a11479275300b5144e9373ce5feacfa9b91',
     ),
+    'doctrine/data-fixtures' => 
+    array (
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f18adf13f6c81c67a88360dca359ad474523f8e3',
+    ),
     'doctrine/dbal' => 
     array (
       'pretty_version' => '3.2.0',
@@ -104,6 +113,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '5b77477ba2981a00b423d1bb17084b87eb57a4a5',
+    ),
+    'doctrine/doctrine-fixtures-bundle' => 
+    array (
+      'pretty_version' => '3.4.1',
+      'version' => '3.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '31ba202bebce0b66fe830f49f96228dcdc1503e7',
     ),
     'doctrine/doctrine-migrations-bundle' => 
     array (
@@ -203,6 +221,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '006aa5d32f887a4db4353b13b5b5095613e0611f',
+    ),
+    'fzaninotto/faker' => 
+    array (
+      'pretty_version' => 'v1.9.2',
+      'version' => '1.9.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '848d8125239d7dbf8ab25cb7f054f1a630e68c2e',
     ),
     'knplabs/knp-components' => 
     array (

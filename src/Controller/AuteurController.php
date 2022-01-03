@@ -26,7 +26,7 @@ $auteurs= $auteurRepository->findAll();
         $pagination = $paginator->paginate(
             $auteurs, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            1/*limit per page*/
+            6/*limit per page*/
         );
         return $this->render('auteur/index.html.twig', [
             'auteurs' => $pagination,
